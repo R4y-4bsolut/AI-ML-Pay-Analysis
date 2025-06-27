@@ -1,6 +1,6 @@
 # 💼 AI/ML Salary Market Analysis
 
-This project investigates salary trends across roles in Artificial Intelligence (AI) and Machine Learning (ML) to gain insights into the global job market and provide actionable recommendations for job seekers, employers, and analysts.
+This project investigates salary trends across roles, industries, regions from 2024 to 3/2025 in Artificial Intelligence (AI) and Machine Learning (ML) to gain insights into the global job market and provide actionable recommendations for job seekers, employers, and analysts.
 
 ---
 
@@ -54,19 +54,12 @@ This project investigates salary trends across roles in Artificial Intelligence 
 
 ## 📌 Key Insights Discovered
 
-- **Role-based Pay**: AI leadership and research roles offer the highest salaries.
-- **Remote Work**: Fully remote jobs generally pay more, especially from U.S.-based firms.
+- **Role-based Pay**: AI leadership and research roles offer the highest salaries. Data and Engineer with high technical skill in robot and AI also get hefty pay.
+- **Remote Work**: Fully remote jobs generally pay more, especially from U.S.-based firms. Especi
 - **Regional Disparity**: North America leads in compensation compared to Europe and Asia.
 - **Experience Premium**: Executives and senior professionals earn significantly more.
 - **Company Size Influence**: Large companies pay more on average, though some mid-sized firms offer competitive packages.
 
----
-
-## 🔍 Hypotheses Based on Insights
-
-1. Remote work levels the playing field, allowing companies to hire global talent while offering above-local-market pay.
-2. Research-heavy and strategic roles yield higher business impact, hence higher compensation.
-3. Mid-sized firms might overpay in specialized roles to attract rare talent and stay competitive.
 
 ---
 
@@ -78,12 +71,18 @@ This project investigates salary trends across roles in Artificial Intelligence 
 - Prioritize experience and skills growth to climb pay brackets.
 
 ### For Employers:
-- Benchmark salary offerings by region, company size, and job type.
-- Use remote hiring to widen the talent pool and reduce costs.
-- Invest in retaining experienced employees as salary inflation rises.
+- For employees residence at the Europe, prioritse fining positions in domestic companies instead of foreign firms.
+- Focus on learning and improving AI/ML technical skills like Scala, Deep Learning and using Git more.
+- For new employees, finding temporary contracts with US companies may get better pay than industry average.
 
 ---
 
+## 🔍 Hypotheses Based on Insights
+
+1. Remote work levels the playing field, allowing companies to hire global talent while offering above-local-market pay.
+2. Research-heavy and strategic roles yield higher business impact, hence higher compensation.
+3. Mid-sized firms might overpay in specialized roles to attract rare talent and stay competitive.
+---
 ## 📎 How to Run
 
 > Open this project in [Google Colab](https://colab.research.google.com/drive/16V8KD-wk88ocnGOtJKxGHNWsiNN9K4w_?usp=sharing), run all cells sequentially, and explore the generated visual insights.
