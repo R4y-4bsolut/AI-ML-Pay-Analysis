@@ -25,27 +25,27 @@ This project investigates salary trends across roles, industries, regions from 2
 - **Structure**: Each row represents one AI/ML job record.
 
 ### Key Columns:
-| Column Name         | Description                                                  |
-|---------------------|--------------------------------------------------------------|
-| `job_id`            | Year the salary was reported                                 |
-| `job_title`         | Job title in the AI/ML field                                 |
-| `salary_usd`        | Annual salary converted to USD                               |
-| `salary_currency`   | Currency of the paid salary                                  |
-| `experience_level`  | Junior, Mid, Senior, Executive                               |
-| `employment_type`   | FT (Full-time), PT (Part-time), Contract, Freelance          |
-| `company_location`  | Country of company                                           |
-| `company_size`      | S (Small), M (Medium), L (Large)                             |
-| `employee_residence`| Country of employee                                          |
-| `remote_ratio`      | 0 = on-site, 50 = hybrid, 100 = fully remote                 |
-| `required_skills `  | Skills required for the job                                  |
-| `education_required`| Level of education                                           |
-| `years_experience`  | Nummber of years experience                                  |
-| `industry`          | Industry of the employer                                     |
-| `posting_date`      | The date the job recruiter posted the JD                     |
-| `application_deadline	`| deadline to submit the job application                    |
-| `job_description_length	`  | length of the JD                 |
-| `benefit_score`          | Benefit score of the company (1-10)                     |
-| `company_name`          | Name of the company                                     |
+| Column Name         | Description                                                  | Datatype |
+|---------------------|--------------------------------------------------------------|----------|
+| `job_id`            | Year the salary was reported                                 |object    |
+| `job_title`         | Job title in the AI/ML field                                 |int64     |
+| `salary_usd`        | Annual salary converted to USD                               |object    |
+| `salary_currency`   | Currency of the paid salary                                  |object    |
+| `experience_level`  | Junior, Mid, Senior, Executive                               |object    |
+| `employment_type`   | FT (Full-time), PT (Part-time), Contract, Freelance          |object    |
+| `company_location`  | Country of company                                           |object    |
+| `company_size`      | S (Small), M (Medium), L (Large)                             |object    |
+| `employee_residence`| Country of employee                                          |object    |
+| `remote_ratio`      | 0 = on-site, 50 = hybrid, 100 = fully remote                 |int64     |
+| `required_skills `  | Skills required for the job                                  |object    |
+| `education_required`| Level of education                                           |object    |
+| `years_experience`  | Nummber of years experience                                  |int64     |
+| `industry`          | Industry of the employer                                     |object    |
+| `posting_date`      | The date the job recruiter posted the JD                     |object    |
+| `application_deadline	`| deadline to submit the job application                    |object    |
+| `job_description_length	`  | length of the JD                     | int64 |
+| `benefit_score`          | Benefit score of the company (1-10)                     | float64  |
+| `company_name`          | Name of the company                                     |object    |
 
 
 ---
@@ -54,19 +54,67 @@ This project investigates salary trends across roles, industries, regions from 2
 
 - **Google Colab** – Interactive notebook platform
 - **Python** – Core programming language
-- **Pandas** – Data manipulation
-- **Matplotlib & Seaborn** – Data visualization
-- **NumPy** – Numerical operations
-- **Collections** – Skill frequency analysis
+- **Power BI** – Data visualization
+
+---
+## ⚙️ Data Cleaning Process
+### 1. Drop Unwanted Columns:
+- The goal of this project is to analyse AI/ML trends and forecast market demand. Thus, columns that directly affect salary, job roles, demand indicators and context that are vital for the analysis will be kept, while unecessary columns will be excluded.
+
+**Drop columns:**
+1. _salary_currency_: salary_usd already standardises the pay currency.
+
+2. _application_deadline_: not affecting the salary trends nor contributing to pay analysis.
+
+3. _company_name_: this project has no intent to analyse company-specific data.
+
+4. _job_description_length_: not significantly align with the project's scope.
+
+5. _benefits_score_: Though could be useful for comparing benefit and salary offer, it still not significantly align with the project's scope.
+### Revised Columns:
+| Column Name         | Description                                                  | Datatype |
+|---------------------|--------------------------------------------------------------|----------|
+| `job_id`            | Year the salary was reported                                 |object    |
+| `job_title`         | Job title in the AI/ML field                                 |int64     |
+| `salary_usd`        | Annual salary converted to USD                               |object    |
+| `experience_level`  | Junior, Mid, Senior, Executive                               |object    |
+| `employment_type`   | FT (Full-time), PT (Part-time), Contract, Freelance          |object    |
+| `company_location`  | Country of company                                           |object    |
+| `company_size`      | S (Small), M (Medium), L (Large)                             |object    |
+| `employee_residence`| Country of employee                                          |object    |
+| `remote_ratio`      | 0 = on-site, 50 = hybrid, 100 = fully remote                 |int64     |
+| `required_skills `  | Skills required for the job                                  |object    |
+| `education_required`| Level of education                                           |object    |
+| `years_experience`  | Nummber of years experience                                  |int64     |
+| `industry`          | Industry of the employer                                     |object    |
+| `posting_date`      | The date the job recruiter posted the JD                     |object    |
+
+### 2. Check Data Consistency:
+- The dataset contains 0 null values ✅
+- The data set has no duplicates ✅
+
+### 3. Remove Outliers
+- The salary_usd is the only column that may contain outliers affecting overall analysis. So they were removed using IQR.
+### 4. Change Datatype:
+- Convert all columns into the right datatype.
+---
+## EDA PROCESS
+- To conduct a descriptive analysis, the dataset was analysed and visualised by these following steps:
+  1. UNIVARIATE ANALYSIS: analysing each column (distribution, frequency) to examinate overall data.
+  2. BIVARIATE ANALYSIS: analysing 2 columns and seek for noteworthy patterns.
+  3. MULTIVARIATE ANALYSIS: Lastly, from findings at previous analysis, grouping multiple columns to analyse detail scenarios.
 
 ---
 
 ## 📌 Key Insights Discovered
 
 - **Role-based Pay**: AI leadership and research roles offer the highest salaries. Data and Engineer with high technical skill in robot and AI also get hefty pay.
-- **Remote Work**: Fully remote jobs generally pay more, especially from U.S.-based firms. Especi
-- **Regional Disparity**: North America leads in compensation compared to Europe and Asia.
-- **Experience Premium**: Executives and senior professionals earn significantly more.
+- **Remote Work**: Fully remote jobs generally pay more, especially from U.S.-based firms. Especially, contract workers even get paid higher.
+- **Regional Disparity**: North America leads in compensation compared to Europe and Asia. Asia is the region with the lowest average pay, with Singapore the only country in DF that offers high pay. In Europe, Switzerland, Denmark, Norway, and the UK holds the record for top 5 of the highest pay globally.
+- **Experience Premium**: Executives and senior professionals earn significantly more. 
+Entry to Mid: 39.32% 
+Mid to Senior: 38.92%
+Senior to Executive: 40.24%
 - **Company Size Influence**: Large companies pay more on average, though some mid-sized firms offer competitive packages.
 
 
