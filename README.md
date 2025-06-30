@@ -27,17 +27,26 @@ This project investigates salary trends across roles, industries, regions from 2
 ### Key Columns:
 | Column Name         | Description                                                  |
 |---------------------|--------------------------------------------------------------|
-| `work_year`         | Year the salary was reported                                 |
+| `job_id`            | Year the salary was reported                                 |
+| `job_title`         | Job title in the AI/ML field                                 |
+| `salary_usd`        | Annual salary converted to USD                               |
+| `salary_currency`   | Currency of the paid salary                                  |
 | `experience_level`  | Junior, Mid, Senior, Executive                               |
 | `employment_type`   | FT (Full-time), PT (Part-time), Contract, Freelance          |
-| `job_title`         | Job title in the AI/ML field                                 |
-| `salary_in_usd`     | Annual salary converted to USD                               |
-| `employee_residence`| Country of employee                                          |
-| `remote_ratio`      | 0 = on-site, 50 = hybrid, 100 = fully remote                 |
 | `company_location`  | Country of company                                           |
 | `company_size`      | S (Small), M (Medium), L (Large)                             |
+| `employee_residence`| Country of employee                                          |
+| `remote_ratio`      | 0 = on-site, 50 = hybrid, 100 = fully remote                 |
+| `required_skills `  | Skills required for the job                                  |
+| `education_required`| Level of education                                           |
+| `years_experience`  | Nummber of years experience                                  |
 | `industry`          | Industry of the employer                                     |
-| `job_category`      | Specific AI/ML domain (e.g., NLP, CV, Data Science)          |
+| `posting_date`      | The date the job recruiter posted the JD                     |
+| `application_deadline	`| deadline to submit the job application                    |
+| `job_description_length	`  | length of the JD                 |
+| `benefit_score`          | Benefit score of the company (1-10)                     |
+| `company_name`          | Name of the company                                     |
+
 
 ---
 
